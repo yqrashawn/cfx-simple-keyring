@@ -1,8 +1,8 @@
 const EventEmitter = require('events').EventEmitter
-const Wallet = require('ethereumjs-wallet')
-const ethUtil = require('ethereumjs-util')
+const { Wallet } = require('cfx-wallet')
+const ethUtil = require('cfx-util')
 const type = 'Simple Key Pair'
-const sigUtil = require('eth-sig-util')
+const sigUtil = require('cfx-sig-util')
 
 class SimpleKeyring extends EventEmitter {
 

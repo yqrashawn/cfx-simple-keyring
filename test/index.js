@@ -1,6 +1,6 @@
 const assert = require('assert')
-const ethUtil = require('ethereumjs-util')
-const sigUtil = require('eth-sig-util')
+const ethUtil = require('cfx-util')
+const sigUtil = require('cfx-sig-util')
 const SimpleKeyring = require('../')
 const EthereumTx = require('ethereumjs-tx').Transaction
 const { expect } = require('chai')
@@ -10,7 +10,7 @@ const TYPE_STR = 'Simple Key Pair'
 // Sample account:
 const testAccount = {
   key: '0xb8a9c05beeedb25df85f8d641538cbffedf67216048de9c678ee26260eb91952',
-  address: '0x01560cd3bac62cc6d7e6380600d9317363400896',
+  address: '0x11560cd3bac62cc6d7e6380600d9317363400896',
 }
 
 describe('simple-keyring', () => {
@@ -61,7 +61,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signTransaction', () => {
-    const address = '0x9858e7d8b79fc3e6d989636721584498926da38a'
+    const address = '0x1858e7d8b79fc3e6d989636721584498926da38a'
     const privateKey = '0x7dd98753d7b4394095de7d176c58128e2ed6ee600abe97c9f6d9fd65015d9b18'
 
     it('returns a signed tx object', async () => {
@@ -83,7 +83,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signMessage', () => {
-    const address = '0x9858e7d8b79fc3e6d989636721584498926da38a'
+    const address = '0x1858e7d8b79fc3e6d989636721584498926da38a'
     const message = '0x879a053d4800c6354e76c7985a865d2922c82fb5b3f4577b2fe08b998954f2e0'
     const privateKey = '0x7dd98753d7b4394095de7d176c58128e2ed6ee600abe97c9f6d9fd65015d9b18'
     const expectedResult = '0x28fcb6768e5110144a55b2e6ce9d1ea5a58103033632d272d2b5cf506906f7941a00b539383fd872109633d8c71c404e13dba87bc84166ee31b0e36061a69e161c'
@@ -96,7 +96,7 @@ describe('simple-keyring', () => {
 
     it('reliably can decode messages it signs', async () => {
       const message = 'hello there!'
-      const msgHashHex = ethUtil.bufferToHex(ethUtil.sha3(message))
+      const msgHashHex = ethUtil.bufferToHex(ethUtil.keccak(message))
 
       await keyring.deserialize([ privateKey ])
       await keyring.addAccounts(9)
@@ -176,11 +176,11 @@ describe('simple-keyring', () => {
 
   describe('#signPersonalMessage', () => {
     it('returns the expected value', async () => {
-      const address = '0xbe93f9bacbcffc8ee6663f2647917ed7a20a57bb'
+      const address = '0x1e93f9bacbcffc8ee6663f2647917ed7a20a57bb'
       const privateKey = new Buffer('6969696969696969696969696969696969696969696969696969696969696969', 'hex')
       const privKeyHex = ethUtil.bufferToHex(privateKey)
       const message = '0x68656c6c6f20776f726c64'
-      const signature = '0xce909e8ea6851bc36c007a0072d0524b07a3ff8d4e623aca4c71ca8e57250c4d0a3fc38fa8fbaaa81ead4b9f6bd03356b6f8bf18bccad167d78891636e1d69561b'
+      const signature = '0x394d5aa8189fbe8cfb0f54c98899131d6addd1467152ca97f87094c233adec4c0da343ee79e190aebbd96b2a2b040f0b5092d28ee739f79ee25ccfa7c0d99bbb1c'
 
       await keyring.deserialize([privKeyHex])
       const sig = await keyring.signPersonalMessage(address, message)
@@ -196,7 +196,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signTypedData', () => {
-    const address = '0x29c76e6ad8f28bb1004902578fb108c507be341b'
+    const address = '0x19c76e6ad8f28bb1004902578fb108c507be341b'
     const privKeyHex = '4af1bceebf7f3634ec3cff8a2c38e51178d5d4ce585c52d6043e5e2cc3418bb0'
     const expectedSig = '0x49e75d475d767de7fcc67f521e0d86590723d872e6111e51c393e8c1e2f21d032dfaf5833af158915f035db6af4f37bf2d5d29781cd81f28a44c5cb4b9d241531b'
 
@@ -223,7 +223,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signTypedData_v1', () => {
-    const address = '0x29c76e6ad8f28bb1004902578fb108c507be341b'
+    const address = '0x19c76e6ad8f28bb1004902578fb108c507be341b'
     const privKeyHex = '4af1bceebf7f3634ec3cff8a2c38e51178d5d4ce585c52d6043e5e2cc3418bb0'
     const expectedSig = '0x49e75d475d767de7fcc67f521e0d86590723d872e6111e51c393e8c1e2f21d032dfaf5833af158915f035db6af4f37bf2d5d29781cd81f28a44c5cb4b9d241531b'
 
@@ -260,7 +260,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signTypedData_v3', () => {
-    const address = '0x29c76e6ad8f28bb1004902578fb108c507be341b'
+    const address = '0x19c76e6ad8f28bb1004902578fb108c507be341b'
     const privKeyHex = '0x4af1bceebf7f3634ec3cff8a2c38e51178d5d4ce585c52d6043e5e2cc3418bb0'
 
     it('returns the expected value', async () => {
@@ -316,7 +316,7 @@ describe('simple-keyring', () => {
   })
 
   describe('#signTypedData_v4', () => {
-    const address = '0x29c76e6ad8f28bb1004902578fb108c507be341b'
+    const address = '0x19c76e6ad8f28bb1004902578fb108c507be341b'
     const privKeyHex = '0x4af1bceebf7f3634ec3cff8a2c38e51178d5d4ce585c52d6043e5e2cc3418bb0'
 
     it('returns the expected value', async () => {
@@ -338,7 +338,7 @@ describe('simple-keyring', () => {
 
   describe('#decryptMessage', () => {
     it('returns the expected value', async () => {
-      const address = '0xbe93f9bacbcffc8ee6663f2647917ed7a20a57bb'
+      const address = '0x1e93f9bacbcffc8ee6663f2647917ed7a20a57bb'
       const privateKey = new Buffer('6969696969696969696969696969696969696969696969696969696969696969', 'hex')
       const privKeyHex = ethUtil.bufferToHex(privateKey)
       const message = 'Hello world!'
@@ -352,7 +352,7 @@ describe('simple-keyring', () => {
 
   describe('#encryptionPublicKey', () => {
     it('returns the expected value', async () => {
-      const address = '0xbe93f9bacbcffc8ee6663f2647917ed7a20a57bb'
+      const address = '0x1e93f9bacbcffc8ee6663f2647917ed7a20a57bb'
       const privateKey = new Buffer('6969696969696969696969696969696969696969696969696969696969696969', 'hex')
       const publicKey = 'GxuMqoE2oHsZzcQtv/WMNB3gCH2P6uzynuwO1P0MM1U='
       const privKeyHex = ethUtil.bufferToHex(privateKey)
