@@ -22,7 +22,7 @@
   "homepage": "https://github.com/yqrashawn/cfx-simple-keyring#readme",
   "dependencies": {
     "cfx-util": "^0.0.2",
-    "cfx-wallet": "^0.0.1-c",
+    "cfx-wallet": "^0.0.1",
     "cfx-sig-util": "^0.0.1-a",
     "ethereumjs-abi": "0.6.5",
     "events": "^1.1.1",
