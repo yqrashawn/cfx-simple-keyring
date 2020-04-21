@@ -132,32 +132,19 @@ buffer@^5.2.1:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
 
-cfx-sig-util@^0.0.1-a:
-  version "0.0.1-a"
-  resolved "https://registry.yarnpkg.com/cfx-sig-util/-/cfx-sig-util-0.0.1-a.tgz#1fcd25eb85fcdbb96d89b7b7f7cbcf641c87f0bb"
-  integrity sha512-6vCdIuVCSyQkoI6l5D4IejY3uqpioUmD93pGHokd/lLbfjLImSJbEMXTwAc+pqMaCamdTGqg0BM1Efgh7G1MqA==
+cfx-sig-util@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/cfx-sig-util/-/cfx-sig-util-0.0.1.tgz#ae87914c031994be5e7ba831cbf416f6bce33f28"
+  integrity sha512-rUGCOPyC3x+VR2ZpUFW7dsulb38UrE69xaogFJaDpu1nUdYCC+vJTLv7MpFjC1XwocstQpY4MMvWVrmYAzslhA==
   dependencies:
     buffer "^5.2.1"
-    cfx-util "^0.0.1-b"
+    cfx-util "^0.0.1-a"
     elliptic "^6.4.0"
     ethereumjs-abi "0.6.5"
     tweetnacl "^1.0.0"
     tweetnacl-util "^0.15.0"
 
-cfx-util@^0.0.1-b:
-  version "0.0.1-b"
-  resolved "https://registry.yarnpkg.com/cfx-util/-/cfx-util-0.0.1-b.tgz#d286e8c954bbe64bd87e7960a6d7392ca952d882"
-  integrity sha512-2L0y2XpOgL8vF/EXfy2p8OeSJBHw3e8qb17E0ie8KoDVonJD7t3lj2KXXppsrIzeOLJoLyHgOO9O9L6EgyBmRg==
-  dependencies:
-    "@types/bn.js" "^4.11.3"
-    bn.js "^4.11.0"
-    create-hash "^1.1.2"
-    ethjs-util "0.1.6"
-    keccak "^3.0.0"
-    rlp "^2.2.4"
-    secp256k1 "^3.0.1"
-
-cfx-util@^0.0.1-c:
+cfx-util@^0.0.1-a, cfx-util@^0.0.1-c:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/cfx-util/-/cfx-util-0.0.1.tgz#db0df52b714e6718afab664fa3f769400610930d"
   integrity sha512-3x73y3IzO9nv4aH1acsrzjerWfYnMcmNzLXxlCA3JZSl/qLfbwQsc8J0gEfc1YndJhjwyNTgfbeIk9bWBsdJFQ==
