@@ -132,7 +132,7 @@ buffer@^5.2.1:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
 
-cfx-sig-util@^0.0.3:
+cfx-sig-util@>=0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/cfx-sig-util/-/cfx-sig-util-0.0.3.tgz#e557e465811461384d1ef02debbcc5fb29bd9c1a"
   integrity sha512-eD7P6+HdsB/22tvYAGEci2RCd1PQdpKAxto1BnYMYVLtp1prb2THAALmpikfHrigzs1vQNYTV+BF009PUjiJSA==
@@ -144,7 +144,7 @@ cfx-sig-util@^0.0.3:
     tweetnacl "^1.0.0"
     tweetnacl-util "^0.15.0"
 
-cfx-util@^0.0.3:
+cfx-util@>=0.0.3, cfx-util@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/cfx-util/-/cfx-util-0.0.3.tgz#83f44371f9bc574a0e00d62bb912a39027050799"
   integrity sha512-gdp+1t5lGSeMXT/WBjLIp/3+Jv3qcSuwMg3XE5nCqfmzheEbFKobV2wtAiCdxqRWgO3Yja+XM16Jmp8UZLDlIg==
@@ -157,7 +157,7 @@ cfx-util@^0.0.3:
     rlp "^2.2.4"
     secp256k1 "^3.0.1"
 
-cfx-wallet@^0.0.3:
+cfx-wallet@>=0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/cfx-wallet/-/cfx-wallet-0.0.3.tgz#20c9aed4766e9c5e045d859560d43815f579fa22"
   integrity sha512-nLAJh/F8jjMwB+9G35DXxzzY7oaqLw2xH86OBLNea8AeiUNvbJy0ZZOmtSd0ILfOHii02a51NVV993pp9wEbHA==
