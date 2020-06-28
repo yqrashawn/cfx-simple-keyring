@@ -180,7 +180,7 @@ describe('simple-keyring', () => {
       const privateKey = new Buffer('6969696969696969696969696969696969696969696969696969696969696969', 'hex')
       const privKeyHex = ethUtil.bufferToHex(privateKey)
       const message = '0x68656c6c6f20776f726c64'
-      const signature = '0x394d5aa8189fbe8cfb0f54c98899131d6addd1467152ca97f87094c233adec4c0da343ee79e190aebbd96b2a2b040f0b5092d28ee739f79ee25ccfa7c0d99bbb1c'
+      const signature = '0x16f85b247cedca22c62bc3a180b394e018c274ab1cc946f7ba3fa815ecc83f946e3d8ba19c9780fa836ea250f5990268e9406538156750d8665902d89851dc261c'
 
       await keyring.deserialize([privKeyHex])
       const sig = await keyring.signPersonalMessage(address, message)

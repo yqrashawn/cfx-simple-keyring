@@ -1,6 +1,6 @@
 {
   "name": "cfx-simple-keyring",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple standard interface for a series of Ethereum private keys.",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/yqrashawn/cfx-simple-keyring#readme",
   "dependencies": {
-    "cfx-util": "^0.0.2",
-    "cfx-wallet": "^0.0.1-c",
-    "cfx-sig-util": "^0.0.1-a",
+    "cfx-util": "^0.0.3",
+    "cfx-wallet": "^0.0.3",
+    "cfx-sig-util": "^0.0.3",
     "ethereumjs-abi": "0.6.5",
     "events": "^1.1.1",
     "xtend": "^4.0.1"
