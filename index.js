@@ -16,14 +16,14 @@ class SimpleKeyring extends EventEmitter {
 
   serialize() {
     return Promise.resolve(
-      this.wallets.map(w => w.getPrivateKey().toString("hex"))
+      this.wallets.map((w) => w.getPrivateKey().toString("hex"))
     );
   }
 
   deserialize(privateKeys = []) {
     return new Promise((resolve, reject) => {
       try {
-        this.wallets = privateKeys.map(privateKey => {
+        this.wallets = privateKeys.map((privateKey) => {
           const stripped = ethUtil.stripHexPrefix(privateKey);
           const buffer = new Buffer(stripped, "hex");
           const wallet = Wallet.fromPrivateKey(buffer);
@@ -42,20 +42,22 @@ class SimpleKeyring extends EventEmitter {
       newWallets.push(Wallet.generate());
     }
     this.wallets = this.wallets.concat(newWallets);
-    const hexWallets = newWallets.map(w => ethUtil.bufferToHex(w.getAddress()));
+    const hexWallets = newWallets.map((w) =>
+      ethUtil.bufferToHex(w.getAddress())
+    );
     return Promise.resolve(hexWallets);
   }
 
   getAccounts() {
     return Promise.resolve(
-      this.wallets.map(w => ethUtil.bufferToHex(w.getAddress()))
+      this.wallets.map((w) => ethUtil.bufferToHex(w.getAddress()))
     );
   }
 
   // tx is an instance of the ethereumjs-transaction class.
   signTransaction(address, tx, opts = {}) {
     const privKey = this.getPrivateKeyFor(address, opts);
-    tx.sign(privKey);
+    tx.sign(privKey, opts.networkId);
     return Promise.resolve(tx);
   }
 
@@ -158,7 +160,7 @@ class SimpleKeyring extends EventEmitter {
     return new Promise((resolve, reject) => {
       try {
         const wallet = this._getWalletForAccount(address, {
-          withAppKeyOrigin: origin
+          withAppKeyOrigin: origin,
         });
         const appKeyAddress = sigUtil.normalize(
           wallet.getAddress().toString("hex")
@@ -179,13 +181,13 @@ class SimpleKeyring extends EventEmitter {
   removeAccount(address) {
     if (
       !this.wallets
-        .map(w => ethUtil.bufferToHex(w.getAddress()).toLowerCase())
+        .map((w) => ethUtil.bufferToHex(w.getAddress()).toLowerCase())
         .includes(address.toLowerCase())
     ) {
       throw new Error(`Address ${address} not found in this keyring`);
     }
     this.wallets = this.wallets.filter(
-      w =>
+      (w) =>
         ethUtil.bufferToHex(w.getAddress()).toLowerCase() !==
         address.toLowerCase()
     );
@@ -196,7 +198,7 @@ class SimpleKeyring extends EventEmitter {
   _getWalletForAccount(account, opts = {}) {
     const address = sigUtil.normalize(account);
     let wallet = this.wallets.find(
-      w => ethUtil.bufferToHex(w.getAddress()) === address
+      (w) => ethUtil.bufferToHex(w.getAddress()) === address
     );
     if (!wallet)
       throw new Error("Simple Keyring - Unable to find matching address.");
