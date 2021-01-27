@@ -765,30 +765,17 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-cfx-sig-util@>=2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/cfx-sig-util/-/cfx-sig-util-2.1.0.tgz#87525748794b6c867d3ecda1e39baf74e2bb945f"
-  integrity sha512-Qg9Zs1kZ/yehVBdxlWOaz5V5GXaVX6+S74HJRAd3XFXIrMQyif+1TYwTnrEZyccw/nJn6eMr7pVut+BFC3gOxA==
+cfx-sig-util@>=2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/cfx-sig-util/-/cfx-sig-util-2.1.1.tgz#88719cf8de51b1270f05ed34c25412c8f88928f7"
+  integrity sha512-OvlkQZjq58mCN2FXCNhnkLWRigY/oSeCWcCtICufPfjLddRfH5kwC/AlATpVNd6oKaboUjM2decyVlCf5NMsOw==
   dependencies:
     "@cfxjs/abi" ">=0.0.1"
     buffer "^5.6.0"
-    cfx-util ">=0.0.3"
+    cfx-util ">=0.0.4"
     elliptic "^6.4.0"
     tweetnacl "^1.0.0"
     tweetnacl-util "^0.15.0"
-
-cfx-util@>=0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/cfx-util/-/cfx-util-0.0.3.tgz#83f44371f9bc574a0e00d62bb912a39027050799"
-  integrity sha512-gdp+1t5lGSeMXT/WBjLIp/3+Jv3qcSuwMg3XE5nCqfmzheEbFKobV2wtAiCdxqRWgO3Yja+XM16Jmp8UZLDlIg==
-  dependencies:
-    "@types/bn.js" "^4.11.3"
-    bn.js "^4.11.0"
-    create-hash "^1.1.2"
-    ethjs-util "0.1.6"
-    keccak "^3.0.0"
-    rlp "^2.2.4"
-    secp256k1 "^3.0.1"
 
 cfx-util@>=0.0.4, cfx-util@^0.0.4:
   version "0.0.4"
@@ -803,14 +790,14 @@ cfx-util@>=0.0.4, cfx-util@^0.0.4:
     rlp "^2.2.4"
     secp256k1 "^3.0.1"
 
-cfx-wallet@>=0.0.3:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/cfx-wallet/-/cfx-wallet-0.0.4.tgz#aca70b7baa13b49c1632106e16080113bdc39527"
-  integrity sha512-iZZj/qH3/MLSf0uRabLcWV0W6fKeMTNZ/Y0PFbiaIz68oRLpREnFMq2ktIa3rdZfREIl/OaE1bIEWBgREZtHag==
+cfx-wallet@>=0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/cfx-wallet/-/cfx-wallet-0.0.5.tgz#a4e8115c016717b3198d6a269591fe16308e7b2b"
+  integrity sha512-L70JfyBLqOqfYtRJxcyoVg5DG5cwHx5v+6u93HeBf00FcQ4ZQiej2COf7WNdyzPbYGp4HNsTi6+ZiufTIwYmiA==
   dependencies:
     aes-js "^3.1.1"
     bs58check "^2.1.2"
-    cfx-util ">=0.0.3"
+    cfx-util ">=0.0.4"
     hdkey "^1.1.1"
     randombytes "^2.0.6"
     scrypt.js "^0.3.0"
