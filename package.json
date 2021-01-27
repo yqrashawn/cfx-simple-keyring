@@ -1,7 +1,7 @@
 {
   "name": "cfx-simple-keyring",
-  "version": "0.0.4",
-  "description": "A simple standard interface for a series of Ethereum private keys.",
+  "version": "0.0.0",
+  "description": "A simple standard interface for a series of Conflux private keys.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -10,10 +10,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/yqrashawn/cfx-simple-keyring.git"
   },
-  "keywords": [
-    "ethereum",
-    "keyring"
-  ],
+  "keywords": ["conflux", "keyring"],
   "author": "yqrashawn <namy.19@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -24,7 +21,6 @@
     "cfx-sig-util": ">=0.0.3",
     "cfx-util": ">=0.0.3",
     "cfx-wallet": ">=0.0.3",
-    "ethereumjs-abi": "0.6.5",
     "events": "^1.1.1",
     "xtend": "^4.0.1"
   },
@@ -33,5 +29,22 @@
     "ethereumjs-tx": "^2.1.0",
     "mocha": "^5.2.0",
     "semantic-release": "^17.1.1"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+        "name": "alpha",
+        "channel": "alpha",
+        "prerelease": "alpha"
+      }
+    ]
   }
 }
