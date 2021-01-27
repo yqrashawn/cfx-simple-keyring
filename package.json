@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+ssh://git@github.com/yqrashawn/cfx-simple-keyring.git"
   },
-  "keywords": ["conflux", "keyring"],
+  "keywords": [
+    "conflux",
+    "keyring"
+  ],
   "author": "yqrashawn <namy.19@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -18,8 +21,8 @@
   },
   "homepage": "https://github.com/yqrashawn/cfx-simple-keyring#readme",
   "dependencies": {
-    "cfx-sig-util": ">=0.0.3",
-    "cfx-util": ">=0.0.3",
+    "cfx-sig-util": ">=2.1.0",
+    "cfx-util": ">=0.0.4",
     "cfx-wallet": ">=0.0.3",
     "events": "^1.1.1",
     "xtend": "^4.0.1"
